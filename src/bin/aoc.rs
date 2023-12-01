@@ -13,7 +13,12 @@ fn main() {
 
     let file_path = format!("data/day_{}.dat", args.day);
     let data = std::fs::read_to_string(file_path).expect("Problem reading file to string.");
-    if args.day == 1 {
-        aoc_2023::day_1::day_1(&data);
-    }
+    let answer = if args.day == 1 {
+        aoc_2023::day_1::day_1(&data)
+    } else {
+        ("".into(), "".into())
+    };
+
+    println!("Part 1: {}", answer.0);
+    println!("Part 2: {}", answer.1);
 }

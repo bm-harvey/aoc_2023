@@ -1,11 +1,6 @@
 use std::cmp::max;
 
 pub fn day_2(raw_data: &str) -> (String, String) {
-    let (p1, p2) = day_2_p_1(raw_data);
-    (format!("{p1}"), format!("{p2}"))
-}
-
-fn day_2_p_1(raw_data: &str) -> (u32, u32) {
     let mut match_idx = 0;
     let mut total = 0;
     let mut power = 0;
@@ -37,7 +32,8 @@ fn day_2_p_1(raw_data: &str) -> (u32, u32) {
 
         power += game.power()
     });
-    (total, power)
+
+    (format!("{total}"), format!("{power}"))
 }
 
 #[derive(Default)]

@@ -1,2 +1,2 @@
-cargo b --bin aoc 
-.\target\debug\aoc.exe -d $args[0]
+cargo b -r --bin aoc 
+.\target\release\aoc.exe -d $args[0] 

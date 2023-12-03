@@ -21,6 +21,8 @@ fn main() {
         format!("test_data/day_{}.dat", args.day)
     };
     let data = std::fs::read_to_string(file_path).expect("Problem reading file to string.");
+
+    let start = std::time::Instant::now();
     if args.day == 1 {
         aoc_2023::day_1::Day1::print(&data)
     } else if args.day == 2 {
@@ -28,4 +30,5 @@ fn main() {
     } else if args.day == 3 {
         aoc_2023::day_3::Day3::print(&data)
     }
+    println!("Solution took {}" , start.elapsed().as_secs_f64());
 }

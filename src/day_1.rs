@@ -41,7 +41,7 @@ impl Day1 {
 
                 if let Some(num) = number {
                     calibration_numbers.push(num);
-                    idx_left = idx_right + 1;
+                    idx_left += 1;
                     continue 'inf;
                 }
             }

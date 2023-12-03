@@ -7,7 +7,7 @@ impl Solution for Day2 {
         let mut match_idx = 0;
         let mut sol_1 = 0;
         let mut sol_2 = 0;
-        raw_data.lines().for_each(|line| {
+        for line in raw_data.lines() {
             let mut game = Game::default();
             match_idx += 1;
             let start = line.find(':').unwrap();
@@ -29,7 +29,8 @@ impl Solution for Day2 {
                 sol_1 += match_idx;
             }
             sol_2 += game.power()
-        });
+        }
+
         (sol_1, sol_2)
     }
 }

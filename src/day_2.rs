@@ -13,8 +13,8 @@ impl Solution for Day2 {
             let start = line.find(':').unwrap();
             let matches: Vec<_> = line[(start + 1)..].split(';').collect();
             for m in matches {
-                for color in m.split(',') {
-                    let mut iter = color.split_whitespace();
+                for color_info in m.split(',') {
+                    let mut iter = color_info.split_whitespace();
                     let number = iter.next().unwrap().parse::<u32>().unwrap();
                     let color = iter.next().unwrap();
                     match color {

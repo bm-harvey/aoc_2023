@@ -25,5 +25,7 @@ fn main() {
         aoc_2023::day_1::Day1::print(&data)
     } else if args.day == 2 {
         aoc_2023::day_2::Day2::print(&data)
+    } else if args.day == 3 {
+        aoc_2023::day_3::Day3::print(&data)
     }
 }

@@ -1,5 +1,7 @@
 use crate::solution::Solution;
 
+use std::cmp::min;
+
 pub struct Day1;
 impl Solution for Day1 {
     fn solution(raw_data: &str) -> (u32, u32) {
@@ -29,13 +31,15 @@ impl Day1 {
             if idx_left >= line.len() {
                 break;
             }
+
             let letter = line.chars().nth(idx_left).unwrap();
             if letter.is_numeric() {
                 calibration_numbers.push(letter.to_digit(10).unwrap());
                 idx_left += 1;
                 continue;
             }
-            for idx_right in (idx_left + 2)..std::cmp::min(line.len(), idx_left + 5) {
+
+            for idx_right in (idx_left + 2)..min(line.len(), idx_left + 5) {
                 let word = &line[idx_left..=idx_right];
                 let number = Day1::get_number(word);
 

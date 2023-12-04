@@ -11,7 +11,6 @@ impl Solution for Day1 {
             sol_1 += Day1::process_line_1(line);
             sol_2 += Day1::process_line_2(line);
         }
-
         (sol_1, sol_2)
     }
 }
@@ -43,6 +42,7 @@ impl Day1 {
                 let word = &line[idx_left..=idx_right];
                 let number = Day1::get_number(word);
 
+                // 53hvhgchljnlxqjsgrhxgf1zfoureightmlhvvv
                 if let Some(num) = number {
                     calibration_numbers.push(num);
                     idx_left += 1;

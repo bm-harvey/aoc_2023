@@ -30,7 +30,6 @@ impl Solution for Day2 {
             }
             sol_2 += game.power()
         }
-
         (sol_1, sol_2)
     }
 }

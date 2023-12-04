@@ -29,6 +29,8 @@ fn main() {
         aoc_2023::day_2::Day2::print(&data)
     } else if args.day == 3 {
         aoc_2023::day_3::Day3::print(&data)
+    } else if args.day == 4 {
+        aoc_2023::day_4::Day4::print(&data)
     }
-    println!("Solution took {}" , start.elapsed().as_secs_f64());
+    println!("Solution took {}", start.elapsed().as_secs_f64());
 }

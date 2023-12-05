@@ -3,19 +3,18 @@ use crate::solution::Solution;
 pub struct Day4;
 impl Solution for Day4 {
     fn solution(raw_data: &str) -> (u32, u32) {
-        // first pass - solve part 1 and count number of lines
-        let mut num_lines = 0;
+        let lines = raw_data.lines();
+
         let sol_1: u32 = raw_data
             .lines()
             .map(|line| {
                 let (winning_nums, gotten_nums) = Day4::unpack_line(line);
-                num_lines += 1;
                 Day4::score(&winning_nums, &gotten_nums)
             })
             .sum();
 
         // second pass - solve part 2
-        let mut weights = vec![1; num_lines];
+        let mut weights = vec![1; lines.count()];
         let mut idx = 0;
         raw_data.lines().for_each(|line| {
             let (winning_nums, gotten_nums) = Day4::unpack_line(line);
@@ -53,7 +52,7 @@ impl Day4 {
             .count();
 
         let increment = weights[idx];
-        for w in &mut weights[(idx + 1)..=(idx + num_matches)] {
+        for w in &mut weights[idx + 1..=idx + num_matches] {
             *w += increment;
         }
     }

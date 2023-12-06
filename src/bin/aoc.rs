@@ -33,7 +33,10 @@ fn main() {
         aoc_2023::day_4::Day4::print(&data)
     } else if args.day == 5 {
         aoc_2023::day_5::Day5::print(&data)
+    } else if args.day == 6 {
+        aoc_2023::day_6::Day6::print(&data)
     }
+
 
     println!("Solution took {}", start.elapsed().as_secs_f64());
 }

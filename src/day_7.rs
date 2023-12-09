@@ -28,11 +28,6 @@ impl Solution for Day7 {
             .collect::<Vec<_>>();
 
         hand_bids.sort_by(|(h1, _), (h2, _)| h1.cmp(h2));
-        //hand_bids.reverse();
-
-        //for hb in hand_bids.iter() {
-        //dbg!(&hb);
-        //}
 
         let sol_1 = hand_bids
             .iter()

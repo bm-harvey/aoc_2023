@@ -3,7 +3,7 @@ use std::cmp::max;
 
 pub struct Day2;
 impl Solution for Day2 {
-    fn solution(raw_data: &str) -> (u32, u32) {
+    fn solution(raw_data: &str) -> (Box<dyn std::fmt::Display>, Box<dyn std::fmt::Display>) {
         let mut match_idx = 0;
         let mut sol_1 = 0;
         let mut sol_2 = 0;
@@ -30,7 +30,7 @@ impl Solution for Day2 {
             }
             sol_2 += game.power()
         }
-        (sol_1, sol_2)
+        (Box::new(sol_1), Box::new(sol_2))
     }
 }
 

@@ -6,7 +6,7 @@ type NodeMap = HashMap<String, (String, String)>;
 
 pub struct Day8;
 impl Solution for Day8 {
-    fn solution(raw_data: &str) -> (u32, u32) {
+    fn solution(raw_data: &str) -> (Box<dyn std::fmt::Display>, Box<dyn std::fmt::Display>) {
         let mut lines = raw_data.lines();
         let lr_instructions = lines.next().unwrap().chars().collect::<Vec<_>>();
         lines.next(); // blank line
@@ -73,7 +73,7 @@ impl Solution for Day8 {
 
         println!("{lcm}");
         let sol_2 = lcm;
-        (sol_1, sol_2 as u32)
+        (Box::new(sol_1), Box::new(sol_2))
     }
 }
 

@@ -1,5 +1,7 @@
+use std::fmt::Display;
+
 pub trait Solution {
-    fn solution(raw_data: &str) -> (u32, u32);
+    fn solution(raw_data: &str) -> (Box<dyn Display>, Box<dyn Display>);
 
     fn print(raw_data: &str) {
         let sol = Self::solution(raw_data);

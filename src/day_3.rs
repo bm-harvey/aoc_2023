@@ -3,7 +3,7 @@ use crate::solution::Solution;
 pub struct Day3;
 
 impl Solution for Day3 {
-    fn solution(raw_data: &str) -> (u32, u32) {
+    fn solution(raw_data: &str) -> (Box<dyn std::fmt::Display>, Box<dyn std::fmt::Display>) {
         let mut matrix: Vec<Vec<char>> = Vec::new();
 
         for l in raw_data.lines() {
@@ -17,7 +17,7 @@ impl Solution for Day3 {
         let sol_1 = Day3::solution_1(&matrix);
         let sol_2 = Day3::solution_2(&matrix);
 
-        (sol_1, sol_2)
+        (Box::new(sol_1), Box::new(sol_2))
     }
 }
 

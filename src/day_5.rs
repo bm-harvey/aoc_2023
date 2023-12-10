@@ -2,7 +2,7 @@ use crate::solution::Solution;
 pub struct Day5;
 
 impl Solution for Day5 {
-    fn solution(raw_data: &str) -> (u32, u32) {
+    fn solution(raw_data: &str) -> (Box<dyn std::fmt::Display>, Box<dyn std::fmt::Display>) {
         let mut lines = raw_data.lines();
 
         let seed_line_values = lines
@@ -32,7 +32,7 @@ impl Solution for Day5 {
             .min()
             .unwrap();
 
-        (sol_1, sol_2)
+        (Box::new(sol_1), Box::new(sol_2))
     }
 }
 

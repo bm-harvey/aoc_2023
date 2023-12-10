@@ -4,14 +4,14 @@ use std::cmp::min;
 
 pub struct Day1;
 impl Solution for Day1 {
-    fn solution(raw_data: &str) -> (u32, u32) {
+    fn solution(raw_data: &str) -> (Box<dyn std::fmt::Display>, Box<dyn std::fmt::Display>) {
         let mut sol_1 = 0;
         let mut sol_2 = 0;
         for line in raw_data.lines() {
             sol_1 += Day1::process_line_1(line);
             sol_2 += Day1::process_line_2(line);
         }
-        (sol_1, sol_2)
+        (Box::new(sol_1), Box::new(sol_2))
     }
 }
 

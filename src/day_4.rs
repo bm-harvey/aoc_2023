@@ -2,7 +2,7 @@ use crate::solution::Solution;
 
 pub struct Day4;
 impl Solution for Day4 {
-    fn solution(raw_data: &str) -> (u32, u32) {
+    fn solution(raw_data: &str) -> (Box<dyn std::fmt::Display>, Box<dyn std::fmt::Display>) {
         let lines = raw_data.lines();
 
         let sol_1: u32 = raw_data
@@ -23,7 +23,7 @@ impl Solution for Day4 {
         });
 
         let sol_2 = weights.iter().sum::<u32>();
-        (sol_1, sol_2)
+        (Box::new(sol_1), Box::new(sol_2))
     }
 }
 

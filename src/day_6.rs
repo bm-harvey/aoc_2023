@@ -2,7 +2,7 @@ use crate::solution::Solution;
 pub struct Day6;
 
 impl Solution for Day6 {
-    fn solution(raw_data: &str) -> (u32, u32) {
+    fn solution(raw_data: &str) -> (Box<dyn std::fmt::Display>, Box<dyn std::fmt::Display>) {
         // part 1
         let lines = raw_data.lines().collect::<Vec<_>>();
         let times = values(lines[0]);
@@ -20,7 +20,7 @@ impl Solution for Day6 {
         let distance = single_value(lines[1]);
         let sol_2 = num_win_times(time, distance);
 
-        (sol_1 as u32, sol_2 as u32)
+        (Box::new(sol_1), Box::new(sol_2))
     }
 }
 
